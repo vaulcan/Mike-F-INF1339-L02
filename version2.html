@@ -3,23 +3,23 @@
         <style>
             .output {color: chartreuse;}
         </style>
-        <!-- LOAD p5.js library so we can use a few of its tools -->
+        <!-- LOAD p5.js library to use some tools -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
         <script>
             
-            //STORE some data in "global" variables known to all functions
+            //STORE data in "global" variables which are known to all functions
             var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=rainbow&api-key=GGU6f1ODw2e23aBbIVAeGPQEblCeUB2C";
             var articleCount = 0
             
-            //SETUP is a standard way P5 starts a script.
+            //SETUP is standard P5 script.
             function setup() {
-              //P5 usually used for drawing    
+              //P5 normally used for drawing    
               noCanvas();
-              //SEND the URL and when the data comes back, run the function "gotData"    
+              //SEND the URL and get data back, run function "gotData"    
               loadJSON(url, gotData);
             }
             
-            //gotDATA for now just announces itself 
+            //gotDATA announces itself 
             function gotData(data) {
                 //alert("FUNCTION GOT DATA ACTIVATED")
                 var text =''
@@ -31,7 +31,7 @@
            </script>
     </head>
     <body>
-        <h1>New York Times API: Articles from all time about rainbows</h1>
+        <h1>New York Times API: Articles about rainbows from the beginning of history</h1>
         <!--a <P> (paragraph) element we will use for output-->
         <!--it's name is "test_output" and it is styled by the class "output"-->
         <p id="test_output" class="output"></p>
